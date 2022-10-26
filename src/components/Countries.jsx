@@ -26,6 +26,9 @@ const Countries = ({ setRegion, region, data, setData }) => {
   };
 
   useEffect(() => {
+    if (data) {   
+      setCountryData (data)
+    }
     if (searchTerm) {
       const filteredData = data?.filter((e) => {
         if (e?.name?.common) {
@@ -106,7 +109,7 @@ const Countries = ({ setRegion, region, data, setData }) => {
 
       setCountryData(dat);
     } else setCountryData(data);
-  }, [searchTerm, region]);
+  }, [searchTerm, region, data]);
 
   return (
     <div className="homeContainer">

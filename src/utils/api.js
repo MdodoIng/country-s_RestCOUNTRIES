@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "https://restcountries.com/v3.1";
+const BASE_URL = 'https://restcountries.com/v3.1'
 const options = {
-  method: "GET",
-};
+  method: 'GET' };
 
 // axios.request(options).then(function (response) {
 //   console.log(response.data);
@@ -12,6 +11,7 @@ const options = {
 // });
 
 export const fetchAPI = async (url) => {
-  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
-  return data;
-};
+  const { data } = await axios.get(`${BASE_URL}/${url}`,options)
+  return data
+
+}

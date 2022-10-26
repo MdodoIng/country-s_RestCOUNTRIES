@@ -43,8 +43,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (!data.length || (region.length && !data.length)) {
-      fetchAPI("all").then((data) =>
+      fetchAPI("all")
+      .then((data) =>
         setData(
           data.sort(function (a, b) {
             var na = a.name.common.toLowerCase();
@@ -56,8 +56,8 @@ const App = () => {
           })
         )
       );
-    }
   }, []);
+  console.log(data);
 
   return (
     <BrowserRouter>
@@ -79,7 +79,6 @@ const App = () => {
                 region={region}
                 setRegion={setRegion}
                 data={data}
-                setData={setData}
               />
             }
           />
